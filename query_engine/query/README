@@ -1,0 +1,21 @@
+README for query.c
+
+Implements a Tiny Search Engine web query engine: given some queries, outputs a list of urls that contain the query. 
+
+Two input parameters: 
+./query [INDEX FILENAME] [DIRECTORY WHERE THE DATA FILES ARE]
+
+TO RUN SAMPLE QUERY (to quit, use CTRL+C or other escape buffer command on terminal):
+./query test/large_index test/large_sample/
+
+Takes stdin as query and outputs urls (in the directory where the data files are) that is relevant to the query. The urls are ordered in terms of frequency. See how ranking works when taking union or intersection of multiple worsd. 
+
+Special Considerations: 
+AND has higher priority than OR 
+read left -> right otherwise. 
+
+Ranking when taking union (OR) or intersection (AND) of two lists: 
+OR takes maximum of frequencies of the two lists. 
+AND adds frequencies of the two lists together. 
+
+Test conditions are run on QEBATS.sh, which runs the Makefile with compilation specifications as well as unit testing files in the test/ folder.

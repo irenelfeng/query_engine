@@ -1,0 +1,43 @@
+Test log on query for 2015-08-16 22:25
+Build details: 
+ host: tahoe.cs.dartmouth.edu 
+ operating system: Linux
+
+Calling make clean and make query:
+ rm -f *.o
+rm query
+gcc -Wall -pedantic -std=c11 -o query src/query.c src/common_query.c -L../util/ -ltseutil
+
+Calling make query_test:
+ gcc -Wall -pedantic -std=c11 -g -ggdb -o test/query_test test/query_test.c src/common_query.c -L../util/ -ltseutil
+
+Calling query_test for unit tests:
+ Opening file dir//3 failedTest AND case 1 passed
+Test AND case 2 passed
+Test OR case 1 passed
+Test MERGESORT case passed
+Test Find Index case 1 passed
+Test Find Index case 2 passed
+Test getURL case 1 passed
+Test getURL case 2 passed
+
+Test processQuery case 1 passed
+
+Test processQuery case 2 passed
+
+Test processQuery case 3 passed
+
+No input specified. 
+QUERY>: Test processQuery case 4 passed
+All passed!
+Test Invalid Number of Inputs 
+	./query 
+ERROR: Sorry, you entered in an incorrect number of input arguments. You must have 2 (index filename to read from, directory of html files)
+Test Invalid index file 
+	./query invalid_index_file ../ 
+ERROR: Sorry, invalid_index_file is not a file.
+Not a directory 
+	./query invalid_index_file not_directory 
+ERROR: Sorry, not_directory is not a directory.
+
+ PASSED TESTING. query engine works!
