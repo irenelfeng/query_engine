@@ -17,4 +17,8 @@ This creates a continuous loop of queries until the user enters in an escape cha
 ## New webpages 
 
 This query therefore runs on the sample index (test/large_index) and the sample webpages (test/large_sample).
-A related program I have created can be used to make new index files and new directories based on a specified webpage. You can find this at https://github.com/irenelfeng/webpages
+A related program I have created can be used to make new index files and new directories based on a specified webpage. You can find this at https://github.com/irenelfeng/webpages (will be open soon)
+
+## Special Considerations 
+
+Runs on bash version 4+
